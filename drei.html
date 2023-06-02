@@ -18,6 +18,7 @@
     }
 
     .akkordeon .sektion {
+      position: relative;
       height: 8vh;
       background-color: lightgray;
       border-top: 1px solid gray;
@@ -26,8 +27,12 @@
     }
 
     .akkordeon .sektion.aktiv {
-      height: calc(100vh - (4vh * (2 - var(--index))));
+      height: calc(100vh - 8vh);
+      margin-top: calc( -8vh * ( var(--index)));
       margin-bottom: -1px; /* Um die Lücke zwischen den Sektionen zu entfernen */
+    }
+    .akkordeon .sektion.aktiv:last-child {
+      height: 100vh !important;
     }
   </style>
   <script>
@@ -57,7 +62,6 @@
     <div class="sektion">Sektion 2</div>
     <div class="sektion">Sektion 3</div>
     <div class="sektion">Sektion 4</div>
-
   </div>
 </body>
 </html>
